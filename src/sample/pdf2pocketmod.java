@@ -44,7 +44,7 @@ import org.apache.pdfbox.rendering.PDFRenderer;
  *
  * @author Dante
  */
-public class PDF2PocketMod extends Application {
+public class pdf2pocketmod extends Application {
 
     public static ArrayList<BufferedImage> shrinkPages(float scale, PDDocument _doc){
 
@@ -237,7 +237,7 @@ public class PDF2PocketMod extends Application {
             desktop.open(file);
         } catch (IOException ex) {
             Logger.getLogger(
-                    PDFtoPocketMod.class.getName()).log(
+                    pdf2pocketmod.class.getName()).log(
                     Level.SEVERE, null, ex
             );
         }
@@ -350,7 +350,8 @@ public class PDF2PocketMod extends Application {
 
             exportDoc.importPage(stitchDoc.getPage(6));
             //Save to external file.
-            exportDoc.save(_outputFile);
+            stitchDoc.save(_outputFile);
+            //exportDoc.save(_outputFile);
             doc.close();
             exportDoc.close();
             if (getOpenInSystemViewer()){
