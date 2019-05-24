@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Actually added the necessary dependencies.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf2pocketbooklet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pdf2pocketbooklet.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/pdf2pocketmod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/pdf2pocketmod.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -60,8 +56,7 @@
     <breakpoint_rules converted="true" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
@@ -71,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
+            <state relative-caret-position="68">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -83,10 +78,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/pdf2pocketmod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="353" column="14" selection-start-line="353" selection-start-column="14" selection-end-line="353" selection-end-column="14" />
+            <state relative-caret-position="281">
+              <caret line="238" column="13" lean-forward="true" selection-start-line="238" selection-start-column="13" selection-end-line="238" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#13829#13830#0" expanded="true" />
+                <element signature="e#13871#13872#0" expanded="true" />
+                <element signature="e#13923#13924#0" expanded="true" />
+                <element signature="e#13950#13951#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,6 +137,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>close</find>
+      <find>main</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -158,8 +158,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-460" />
+    <option name="y" value="-16" />
     <option name="width" value="1612" />
     <option name="height" value="876" />
   </component>
@@ -172,45 +172,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="pdf2pocketmod" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdf2pocketmod" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdf2pocketmod" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdf2pocketmod" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdf2pocketmod" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdf2pocketmod" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdf2pocketmod" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdf2pocketmod" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdf2pocketmod" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdf2pocketmod" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdf2pocketmod" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdf2pocketmod" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -329,6 +293,21 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
     </task>
+    <task id="LOCAL-00001" summary="Included necessary dependencies locally.">
+      <created>1558534890403</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1558534890403</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Actually added the necessary dependencies.">
+      <created>1558534941192</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1558534941192</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -338,7 +317,7 @@
     <frame x="-8" y="6" width="1936" height="1042" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.15351813" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.10660981" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -346,7 +325,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32893288" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2090209" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -411,12 +390,25 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Included necessary dependencies locally." />
+    <MESSAGE value="Actually added the necessary dependencies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Actually added the necessary dependencies." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -426,6 +418,13 @@
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -434,29 +433,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/pdf2pocketmod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="353" column="14" selection-start-line="353" selection-start-column="14" selection-end-line="353" selection-end-column="14" />
+        <state relative-caret-position="281">
+          <caret line="238" column="13" lean-forward="true" selection-start-line="238" selection-start-column="13" selection-end-line="238" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#13829#13830#0" expanded="true" />
+            <element signature="e#13871#13872#0" expanded="true" />
+            <element signature="e#13923#13924#0" expanded="true" />
+            <element signature="e#13950#13951#0" expanded="true" />
           </folding>
         </state>
       </provider>

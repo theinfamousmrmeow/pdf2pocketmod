@@ -197,9 +197,6 @@ public class pdf2pocketmod extends Application {
             }
         });
 
-
-        //
-
         //HBox for buttons
         HBox bottomHbox = new HBox(5);
         bottomHbox.setAlignment(Pos.CENTER);
@@ -229,7 +226,23 @@ public class pdf2pocketmod extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException{
-        launch(args);
+        //TODO:  If we are given CLI arguments, don't bother with launching GUI.
+        if (args.length>0){
+        //CLI
+            if (args.length==1){
+                File file = new File(args[0]);
+                File outPutfile = new File(args[0]+"_pmod.pdf");
+                exportPDF(file,file);
+            }
+            else {
+                exportPDF(new File(args[0]), new File(args[1]));
+            }
+
+        }
+        //GUI
+        else {
+            launch(args);
+        }
     }
 
     private void openFile(File file) {
@@ -285,27 +298,45 @@ public class pdf2pocketmod extends Application {
         return false;
     }
 
-    public static boolean exportPDF(File _file, File _outputFile){
-
+    public static boolean padOrTruncatePages(File _file, File _outputFile){
         try
         {
-            doc = PDDocument.load(_file);
-            int pages = doc.getNumberOfPages();
+            PDDocument pdf = PDDocument.load(_file);
+            int pages = pdf.getNumberOfPages();
             //MAKE NEW PAGE
             logMessage("There are "+pages+" pages.");
             //Shear off any remaining pages
             if (pages>8) {logMessage("Too many pages, truncating to 8.");}//MUst be 8 pages to work
             while (pages>8){
-                doc.removePage(pages-1);
+                pdf.removePage(pages-1);
                 pages--;
             }
             if (pages<8){
                 logMessage("Padding out to 8 pages.");
                 while (pages<8){
-                    doc.addPage(new PDPage());
+                    pdf.addPage(new PDPage());
                     pages++;
                 }
             }
+
+            pdf.save(_outputFile);
+            //exportDoc.save(_outputFile);
+            pdf.close();
+            logMessage("Successfully padded/truncated.");
+
+        }
+        catch (Exception e){
+
+        }
+        return true;
+    }
+
+    public static boolean exportPDF(File _file, File _outputFile){
+
+        try
+        {
+            padOrTruncatePages(_file,_outputFile);
+            doc = PDDocument.load(_file);
             //Rotate pages
             PDDocument roDoc = reorderPages(doc);
             rotatePages(roDoc);
@@ -352,6 +383,8 @@ public class pdf2pocketmod extends Application {
             //Save to external file.
             stitchDoc.save(_outputFile);
             //exportDoc.save(_outputFile);
+            stitchDoc.close();
+            roDoc.close();
             doc.close();
             exportDoc.close();
             if (getOpenInSystemViewer()){
@@ -363,6 +396,7 @@ public class pdf2pocketmod extends Application {
         catch(Exception e){
             //Catch
             logMessage("There was an error exporting the PDF.");
+            e.printStackTrace();
         }
         return false;
     }
