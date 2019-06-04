@@ -275,6 +275,7 @@ public class pdf2pocketmod extends Application {
 
     }
 
+
     public static boolean validatePDF(File _file, PDDocument _doc){
 
         try
@@ -298,45 +299,45 @@ public class pdf2pocketmod extends Application {
         return false;
     }
 
-    public static boolean padOrTruncatePages(File _file, File _outputFile){
+    //TODO:  Really just needs to be passed a PDDocument.  No idea why I had it pass a file.
+    //
+    public static boolean padOrTruncatePages(PDDocument pdf){
         try
         {
-            PDDocument pdf = PDDocument.load(_file);
             int pages = pdf.getNumberOfPages();
-            //MAKE NEW PAGE
             logMessage("There are "+pages+" pages.");
-            //Shear off any remaining pages
-            if (pages>8) {logMessage("Too many pages, truncating to 8.");}//MUst be 8 pages to work
             while (pages>8){
                 pdf.removePage(pages-1);
                 pages--;
             }
-            if (pages<8){
-                logMessage("Padding out to 8 pages.");
                 while (pages<8){
                     pdf.addPage(new PDPage());
                     pages++;
                 }
-            }
-
-            pdf.save(_outputFile);
-            //exportDoc.save(_outputFile);
-            pdf.close();
+            //pdf.save(_outputFile);
             logMessage("Successfully padded/truncated.");
+            logMessage( "now has " + pdf.getNumberOfPages() +" pages.");
 
         }
         catch (Exception e){
-
+            logError("Couldn't truncate or pad." + e.toString());
+            return false;
         }
         return true;
     }
 
+
+    //TODO:  Restructure this whole thing.
+    //TODO:  Have it just create a PDDocument from the given file first, then pass that object into each function to get changed.  No idea why I did it this way to begin with.
     public static boolean exportPDF(File _file, File _outputFile){
 
         try
         {
-            padOrTruncatePages(_file,_outputFile);
+            //Object that gets passed into each function.
             doc = PDDocument.load(_file);
+
+            padOrTruncatePages(doc);
+
             //Rotate pages
             PDDocument roDoc = reorderPages(doc);
             rotatePages(roDoc);
@@ -405,6 +406,10 @@ public class pdf2pocketmod extends Application {
         System.out.println(string);
     }
 
+    public static void logError(String string){
+        System.err.println(string);
+    }
+
     public static boolean getOpenInSystemViewer(){
         return true;
     }
@@ -459,6 +464,7 @@ public class pdf2pocketmod extends Application {
         return outPdfPage;
     }
 
+    //TODO:  Decide on a standard.  Either have the functions mutate a given object, or have them all return a new object.
     public static PDDocument reorderPages(PDDocument _doc){
         PDDocument newDoc = new PDDocument();
         PDDocument oldDoc = _doc;
@@ -471,7 +477,7 @@ public class pdf2pocketmod extends Application {
         newDoc.addPage(oldDoc.getPage(4));
         //NOT SURE BRAIN HURTS
         newDoc.addPage(oldDoc.getPage(0));
-        newDoc.addPage(oldDoc.getPage(7));
+        newDoc.addPage(oldDoc.getPage(7));//TODO:  Determine why this thinks the index is 8 and is throwing exception...
         newDoc.addPage(oldDoc.getPage(6));
         newDoc.addPage(oldDoc.getPage(5));
 
@@ -487,8 +493,6 @@ public class pdf2pocketmod extends Application {
             //_doc.getPage(i).setCropBox(new PDRectangle(0,0,oframe.getWidth()/3,oframe.getHeight()/2));
         }
     }
-
-
 
     public static void getImportPDF(File file){
 
